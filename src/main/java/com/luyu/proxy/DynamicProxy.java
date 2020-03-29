@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 
 public class DynamicProxy {
     /*
-    功能: 动态代理的实现 要实现动态代理仅需要定义一个接口
+    功能: 动态代理的实现 动态代理其实就是代理对象调用目标对象的同名方法,并在调用前后加增强代码
     参数 : 目标对象
     返回值: 代理对象
      */
