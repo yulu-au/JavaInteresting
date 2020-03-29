@@ -10,8 +10,6 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException {
         //测试mysql连接
-        //拿到驱动对象
-        Driver driver = new com.mysql.cj.jdbc.Driver();
         String url = "jdbc:mysql://localhost:3306/test" +
                 "?serverTimezone=Asia/Shanghai" +
                 "&useSSL=false" +
