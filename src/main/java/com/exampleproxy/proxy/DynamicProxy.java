@@ -1,4 +1,4 @@
-package com.luyu.proxy;
+package com.exampleproxy.proxy;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;

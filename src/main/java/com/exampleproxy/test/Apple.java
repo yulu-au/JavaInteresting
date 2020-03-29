@@ -1,4 +1,4 @@
-package com.luyu.test;
+package com.exampleproxy.test;
 
 public class Apple implements Fruit {
     public void canbejuice(){
