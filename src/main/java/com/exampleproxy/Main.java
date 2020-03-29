@@ -1,8 +1,8 @@
-package com.luyu;
+package com.exampleproxy;
 
-import com.luyu.test.Apple;
-import com.luyu.test.Fruit;
-import com.luyu.proxy.DynamicProxy;
+import com.exampleproxy.test.Apple;
+import com.exampleproxy.test.Fruit;
+import com.exampleproxy.proxy.DynamicProxy;
 
 public class Main {
     public static void main(String[] args) throws Exception {
