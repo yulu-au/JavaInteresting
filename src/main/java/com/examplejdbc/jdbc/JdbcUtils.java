@@ -1,9 +1,7 @@
 package com.examplejdbc.jdbc;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class JdbcUtils {
@@ -36,7 +34,28 @@ public class JdbcUtils {
         return conn;
     }
 
-    public static boolean free(){
-        return false;
+    //try(resource)释放资源更加便捷
+    public static void free(ResultSet rs, PreparedStatement ps, Connection conn){
+        try{
+            if(rs != null)
+                rs.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                if(ps != null)
+                    ps.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                    try {
+                        if(conn != null)
+                            conn.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+            }
+        }
     }
 }
+
