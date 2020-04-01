@@ -1,12 +1,18 @@
-package com.examplejdbc.pojo;
+package com.examplejdbc.dao;
 
 import java.sql.Date;
-
+/*
+定义User类表示数据库里面的user表
+ */
 public class User {
     private int id;
     private String name;
     private int age;
     private Date birthday;
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;

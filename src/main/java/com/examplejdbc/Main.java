@@ -6,13 +6,17 @@ import java.sql.*;
 import com.examplejdbc.dao.MyJdbcTemplate;
 import com.examplejdbc.dao.UserDao;
 import com.examplejdbc.dao.UserDaoImpl;
-import com.examplejdbc.jdbc.JdbcUtils;
-import com.examplejdbc.pojo.User;
+import com.examplejdbc.dao.User;
 
 public class Main {
     public static void main(String[] args) {
+        User user = new User();
+        user.setId(1);
+        user.setName("xiaoha");
+        user.setAge(35);
+        user.setBirthday(new Date(1585716235000L));
+
         UserDao userDao = new UserDaoImpl(new MyJdbcTemplate());
-        User user = userDao.getUser(2);
-        System.out.println(user);
+        userDao.updateUser(user);
     }
 }
