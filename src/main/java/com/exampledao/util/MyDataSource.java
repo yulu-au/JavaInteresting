@@ -53,7 +53,7 @@ public class MyDataSource {
         try {
             for (int i = 0; i < initCount; i++) {
                 // 创建RealConnection
-                Connection realConnection = DriverManager.getConnection(props.getProperty("jdbcUrl"),
+                Connection realConnection = DriverManager.getConnection(props.getProperty("url"),
                         props.getProperty("username"),
                         props.getProperty("password"));
                 // 将RealConnection传入createProxyConnection()，得到代理连接并加入池中,currentIdleCount++
