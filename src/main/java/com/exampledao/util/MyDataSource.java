@@ -61,8 +61,12 @@ public class MyDataSource {
                 currentIdleCount++;
             }
         } catch (SQLException e) {
-            //为什么这里抛运行时异常打印不出正确的跟踪信息 throw new RuntimeException(e)
+            /*
+            这里仅抛出RuntimeException会被后面的RuntimeException屏蔽
+            因为本函数被调用,处于try块内,还得执行finally才能结束线程
+             */
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
