@@ -12,20 +12,18 @@ import java.util.Properties;
 public class MyJdbcTemplate {
     private static Properties ps = null;
 
+    /*
+    仅在类被加载时执行
+     */
     static {
         ps = new Properties();
         InputStream in = null;
-        try {
-            in = new FileInputStream(new File("E:/下载/JavaInteresting/src/main/resources/jdbc.properties"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        in = MyJdbcTemplate.class.getClassLoader().getResourceAsStream("jdbc.properties");
         try {
             ps.load(in);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public static Connection getConnection() {

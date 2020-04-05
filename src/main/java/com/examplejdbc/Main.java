@@ -13,7 +13,7 @@ public class Main {
         User user = new User();
         user.setId(1);
         user.setName("xiaoha");
-        user.setAge(35);
+        user.setAge(3);
         user.setBirthday(new Date(1585716235000L));
 
         UserDao userDao = new UserDaoImpl(new MyJdbcTemplate());
