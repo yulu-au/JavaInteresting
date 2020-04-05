@@ -1,4 +1,4 @@
-package com.examplejdbc.dao;
+package com.exampledao.pojo;
 
 import java.sql.Date;
 /*

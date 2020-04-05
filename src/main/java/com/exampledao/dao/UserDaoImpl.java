@@ -1,14 +1,15 @@
-package com.examplejdbc.dao;
+package com.exampledao.dao;
+
+import com.exampledao.pojo.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
-    private MyJdbcTemplate template;
+    private MyJdbcTemplate template = new MyJdbcTemplate();
 
-    public UserDaoImpl(MyJdbcTemplate template) {
-        this.template = template;
+    public UserDaoImpl() {
     }
 
     @Override

@@ -1,4 +1,6 @@
-package com.examplejdbc.dao;
+package com.exampledao.dao;
+
+import com.exampledao.pojo.User;
 
 /*
 定义了对user表进行数据访问的抽象
