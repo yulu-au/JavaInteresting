@@ -53,7 +53,7 @@ public class MyDataSource {
         try {
             for (int i = 0; i < initCount; i++) {
                 // 创建RealConnection
-                Connection realConnection = DriverManager.getConnection(props.getProperty("Url"),
+                Connection realConnection = DriverManager.getConnection(props.getProperty("jdbcUrl"),
                         props.getProperty("username"),
                         props.getProperty("password"));
                 // 将RealConnection传入createProxyConnection()，得到代理连接并加入池中,currentIdleCount++
@@ -61,7 +61,7 @@ public class MyDataSource {
                 currentIdleCount++;
             }
         } catch (SQLException e) {
-            //这里不打印出来异常很难定位
+            //为什么这里抛运行时异常打印不出正确的跟踪信息 throw new RuntimeException(e)
             e.printStackTrace();
         }
     }
